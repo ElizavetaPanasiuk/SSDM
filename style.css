@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(191,83,188);
+  background: linear-gradient(90deg, rgba(191,83,188,1) 0%, rgba(206,150,215,1) 50%, rgba(191,83,188,1) 100%);
+}
+input{
+  margin: 0 12px 0 0;
+}
+h1, h2, button{
+  margin: 20px 0 0;
+}
+
+h1, h2, p, button, h3{
+  text-align: center;
+  color: rgb(24, 2, 23);
+}
+h3{
+  text-align: left;
+  margin: 5px 0;
+}
+
+button{
+  font-size: 20px;
+  font-weight: 700;
+  border: 2px solid rgb(24, 2, 23);
+}
+
+button:hover{
+  box-shadow:1px 1px 6px 3px rgba(24,2,23,1);
+  -webkit-box-shadow:1px 1px 6px 3px rgba(24,3,23,1);
+  -moz-box-shadow:1px 1px 6px 3px rgba(24,2,23,1);
+}
+.getVarsBut, .getCompareFields, .getResult{
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.problem{
+  border-bottom: 1px #000 solid;
+  min-width: 200px;
+  text-align: center;
+  min-height: 30px;
+  line-height: 26px;
+  font-size: 24px;
+}
+
+.varNum{
+  border-bottom: 1px #000 solid;
+  min-width: 30px;
+  text-align: center;
+  min-height: 30px;
+  line-height: 26px;
+  font-size: 24px;
+}
+.list{
+  width: 70%;
+}
+.listItem{
+  border-bottom: 1px solid #000;
+  min-height: 30px;
+  min-height: 30px;
+  line-height: 26px;
+  font-size: 24px;
+  color: rgb(24, 2, 23);
+}
+
+.hidden{
+  display: none;
+}
+.resultField{
+  width: 70%;
+  min-height: 60px;
+  border: 2px dashed rgb(24, 2, 23);
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+.resultField p{
+  text-align: left;
+}
+
+.makingChoice{
+  margin: 20px 0 0 0;
+}
+.makingChoice p.q{
+  text-align: center;
+}
+.makingChoice p{
+  text-align: left;
+}
+
+.getResult{
+  margin-bottom: 20px;
+}
