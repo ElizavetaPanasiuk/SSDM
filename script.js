@@ -80,7 +80,6 @@ getCompareFieldsBut.addEventListener('click', function func() {
   } else {
     alert('Check input data');
   }
-  
 });
 
 
@@ -109,33 +108,53 @@ resultBut.addEventListener('click', function func() {
     }
     let bestVarScore = variants[0].score;
     let bestVar = variants[0].variant;
+    let bestVarScores = [];
+    let bestVars = [];
     for (let i = 1; i < variants.length; i++){
       if (variants[i].score > bestVarScore) {
         bestVarScore = variants[i].score;
         bestVar = variants[i].variant;
       } 
     }
-  
+    for (let i = 0; i < variants.length; i++){
+      if (variants[i].score === bestVarScore) {
+        bestVarScores.push(variants[i].score);
+        bestVars.push(variants[i].variant);
+      }
+    }
     let resultField = document.createElement('div');
     let resultW = document.createElement('h3');
     resultW.className = 'resultW';
     resultW.textContent = 'Result';
     resultField.append(resultW);
     resultField.className = 'resultField';
-    resultField.innerHTML += `The best choice is <b>${bestVar.trim()}</b> with score <b>${bestVarScore}/${variants.length - 1}</b>`;
+    if (bestVarScores.length === 1) {
+      resultField.innerHTML += `The best choice is <b>${bestVar.trim()}</b> with score <b>${bestVarScore}/${variants.length - 1}</b>`;
+    } else {
+      resultField.innerHTML += `The best choices are`
+      for (let i = 0; i < bestVarScores.length; i++){
+        resultField.innerHTML += ` <b>${bestVars[i].trim()}</b>,`;
+      }
+      resultField.innerHTML = resultField.innerHTML.slice(0, -1);
+      resultField.innerHTML += ` with scores <b>${bestVarScore}/${variants.length - 1}</b>`;
+    }
+    
     let otherSc = document.createElement('h3');
     otherSc.className = 'resultW';
     otherSc.textContent = 'Other scores';
     resultField.append(otherSc);
-    for (let i = 0; i < variants.length; i++){
-      if (variants[i].variant !== bestVar) {
-        resultField.innerHTML += `<p>The score of variant <b>${variants[i].variant.trim()}</b> is <b>${variants[i].score}/${variants.length - 1}</b></p>`
+    let sortedNum = bestVarScore - 1;
+    for (let i = sortedNum; i >= 0; i--){
+      for (let j = 0; j < variants.length; j++){
+        if (variants[j].score === i) {
+          resultField.innerHTML += `<p>The score of variant <b>${variants[j].variant.trim()}</b> is <b>${variants[j].score}/${variants.length - 1}</b></p>`
+        }
       }
     }
+    console.log(variants);
     document.body.append(resultField);
     this.removeEventListener('click', func);
   } else {
     alert('Fill all the radios');
   }
-  
 })
