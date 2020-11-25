@@ -10,8 +10,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(191,83,188);
-  background: linear-gradient(90deg, rgba(191,83,188,1) 0%, rgba(206,150,215,1) 50%, rgba(191,83,188,1) 100%);
+  background: linear-gradient(to right, #00AAFF, #00FF6C);
 }
 input{
   margin: 0 12px 0 0;
@@ -96,10 +95,13 @@ button:hover{
   margin: 20px 0 0 0;
 }
 .makingChoice p.q{
-  text-align: center;
+  text-align: left;
+  margin-bottom: 10px;
 }
 .makingChoice p{
   text-align: left;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .getResult{
