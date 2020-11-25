@@ -8,7 +8,7 @@ const resultBut = document.querySelector('.getResult');
 const choosing = document.querySelector('.choosing');
 
 getVarsBut.addEventListener('click', function func() {
-  if (problem.textContent == false || isNaN(+varNum.textContent) || varNum.textContent == false) {
+  if (problem.textContent == false || isNaN(+varNum.textContent) || varNum.textContent == false || varNum.textContent <= 1) {
     alert('Check input data');
   }
   else {
